@@ -1,0 +1,100 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Nov 28 14:37:58 2024
+| Host         : Alperen running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
+| Design       : top_module
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    22 |
+|    Minimum number of control sets                        |    22 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    24 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    22 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    21 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              24 |            8 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             208 |           87 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             568 |          248 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                Enable Signal                |          Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+|  n_0_1337_BUFG | processor/dp/pFtoD/E[0]                     | c2/FSM_sequential_state_reg[1]_0  |                2 |              6 |         3.00 |
+|  CLK_IBUF_BUFG |                                             |                                   |                8 |             24 |         3.00 |
+|  n_0_1337_BUFG | processor/dp/pFtoD/PcPlus4D[6]_i_2_n_1      | processor/dp/pFtoD/jump           |                7 |             26 |         3.71 |
+|  CLK_IBUF_BUFG | c2/CNT                                      | c2/CNT[27]_i_1_n_1                |                8 |             28 |         3.50 |
+|  CLK_IBUF_BUFG | c1/CNT                                      | c1/CNT[27]_i_1_n_1                |                8 |             28 |         3.50 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_88         | c2/FSM_sequential_state_reg[1]_8  |               16 |             32 |         2.00 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_87         | c2/FSM_sequential_state_reg[1]_11 |               15 |             32 |         2.13 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_86         | c2/FSM_sequential_state_reg[1]_10 |               16 |             32 |         2.00 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep_85     | c2/FSM_sequential_state_reg[1]_12 |               13 |             32 |         2.46 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep_86     | c2/FSM_sequential_state_reg[1]_4  |               15 |             32 |         2.13 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep_87     | c2/FSM_sequential_state_reg[1]_9  |               13 |             32 |         2.46 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__0_85  | c2/FSM_sequential_state_reg[1]_2  |               14 |             32 |         2.29 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__0_86  | c2/FSM_sequential_state_reg[1]_1  |               13 |             32 |         2.46 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__1_114 | c2/FSM_sequential_state_reg[1]_14 |               17 |             32 |         1.88 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__1_113 | c2/FSM_sequential_state_reg[1]_13 |               18 |             32 |         1.78 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__1_112 | c2/FSM_sequential_state_reg[1]_6  |               13 |             32 |         2.46 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__0_87  | c2/FSM_sequential_state_reg[1]_3  |               14 |             32 |         2.29 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__2_114 | c2/FSM_sequential_state_reg[1]_7  |               15 |             32 |         2.13 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__2_113 | c2/FSM_sequential_state_reg[1]_5  |               13 |             32 |         2.46 |
+| ~n_0_1337_BUFG | processor/dp/pMtoW/RegWriteW_reg_rep__2_112 | c2/FSM_sequential_state_reg[1]_15 |               18 |             32 |         1.78 |
+|  n_0_1337_BUFG |                                             | processor/dp/pFtoD/SR[0]          |               33 |             89 |         2.70 |
+|  n_0_1337_BUFG |                                             | c2/FSM_sequential_state_reg[1]_0  |               54 |            119 |         2.20 |
++----------------+---------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+
+
